@@ -1,0 +1,17 @@
+Extra note
+
+sh 2login.sh will let you login to the container os
+and you will see the file we created.
+
+$ sh 2login.sh
+/ # ls
+bin               lib               run               usr
+dev               media             sbin              var
+etc               mnt               srv
+hello_python.txt  proc              sys
+home              root              tmp
+
+/ # python --version
+Python 3.7.0b2
+
+/ # exit
