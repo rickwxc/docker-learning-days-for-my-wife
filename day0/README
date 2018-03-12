@@ -1,0 +1,11 @@
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+day0_py_flask       latest              f774deff4b93        31 seconds ago      500MB
+day0_rb             latest              3a34571a2f66        20 hours ago        61.4MB
+day0_py             latest              9763a1910d3c        21 hours ago        93.6MB
+python              3.7.0b2-alpine3.7   1d50d241fc8a        6 days ago          93.6MB
+python              3.7.0b2-slim        1207c087f193        9 days ago          144MB
+ruby                2.5.0-alpine3.7     8ea9c590ec75        3 weeks ago         61.4MB
+ruby                2.5.0-stretch       bae0455cb2b9        3 weeks ago         869MB
+ruby                latest              bae0455cb2b9        3 weeks ago         869MB
+python              2.7.10-slim         0e046541a1fd        2 years ago         205MB
