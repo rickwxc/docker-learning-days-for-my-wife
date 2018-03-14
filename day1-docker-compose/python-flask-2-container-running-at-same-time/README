@@ -1,0 +1,17 @@
+start with
+docker-compose build
+
+docker-compose up
+will run 2 web server at same time.
+or try docker-compose up --build
+
+day1-flask-1 
+  ports:
+    - '8000:5000' #http://localhost:8000
+open http://localhost:8000  with browser 
+
+day1-flask-2:
+  ports:
+    - '8001:5000' #http://localhost:8001
+open http://localhost:8001  with browser 
+

@@ -1,0 +1,19 @@
+day1-flask-1:
+  container_name: day1-flask-1
+  build: .
+  command: flask run --host=0.0.0.0 --port=5000 #start with port 5000 within its container
+  environment:
+    FLASK_APP: app.py 
+    ENV_MY_NAME: 'flask container 1'
+  ports:
+    - '8000:5000' #http://localhost:8000 mapping to port 8000 
+
+day1-flask-2:
+  container_name: day1-flask-2
+  build: .
+  command: flask run --host=0.0.0.0 --port=5000 #start with port 5000 within its container 
+  environment:
+    FLASK_APP: app.py 
+    ENV_MY_NAME: 'flask container 2'
+  ports:
+    - '8001:5000' #http://localhost:8001 mapping to port 8001 
