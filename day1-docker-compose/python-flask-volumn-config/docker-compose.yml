@@ -1,0 +1,13 @@
+day1-flask-vol:
+    container_name: day1-flask-vol
+    build: .
+    environment:
+        FLASK_APP: app.py 
+        FLASK_DEBUG: 1 #make you edit app.py file and view the change without restart server.
+        ENV_MY_NAME: 'flask and docker volumn'
+    command: flask run --host=0.0.0.0 --port=5000 #start with port 5000 within its container
+    volumes:
+        - ./web:/app/web
+    ports:
+        - '8000:5000' #http://localhost:8000 mapping to your local port 8000 
+    command: flask run --host=0.0.0.0 --port=5000 #start with port 5000 within its container 

@@ -1,0 +1,26 @@
+Volume: connect your local folder with folder inside the container.
+
+./docker-compose.yml
+volumes:
+	- ./web:/app/web
+map my local ./web folder into container /app/web path.
+
+./Dockerfile
+WORKDIR /app/web
+then flask will start running inside /app/web
+
+
+1. sh 0_build_and_run.sh
+
+curl -i http://localhost:8000/ 
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 71
+Server: Werkzeug/0.14.1 Python/3.7.0b2
+Date: Mon, 19 Mar 2018 03:40:17 GMT
+
+Hello, Flask and my name is flask and docker volumn and flask debug = 1
+
+
+try change anything for app.py and refresh the brower you will see the result.
+
