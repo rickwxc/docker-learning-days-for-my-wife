@@ -8,6 +8,7 @@ day1-flask-vol:
     command: flask run --host=0.0.0.0 --port=5000 #start with port 5000 within its container
     volumes:
         - ./web:/app/web
+          #- ./web:/app/web:ro
     ports:
         - '8000:5000' #http://localhost:8000 mapping to your local port 8000 
     command: flask run --host=0.0.0.0 --port=5000 #start with port 5000 within its container 

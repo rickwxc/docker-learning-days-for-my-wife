@@ -5,6 +5,9 @@ volumes:
 	- ./web:/app/web
 map my local ./web folder into container /app/web path.
 
+- ./web:/app/web:ro  append :ro will make the folder read only
+
+
 ./Dockerfile
 WORKDIR /app/web
 then flask will start running inside /app/web
