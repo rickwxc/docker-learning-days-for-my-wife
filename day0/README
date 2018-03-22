@@ -9,3 +9,12 @@ ruby                2.5.0-alpine3.7     8ea9c590ec75        3 weeks ago         
 ruby                2.5.0-stretch       bae0455cb2b9        3 weeks ago         869MB
 ruby                latest              bae0455cb2b9        3 weeks ago         869MB
 python              2.7.10-slim         0e046541a1fd        2 years ago         205MB
+
+
+
+
+FROM ruby:2.5.0-alpine3.7 (No apt-get)
+ruby$ sh 2login.sh
+/ # apt-get
+sh: apt-get: not found
+

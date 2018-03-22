@@ -1,0 +1,15 @@
+cd container1
+sh 0build.sh
+sh 1run.sh 
+/ # cat myvol/greeting 
+hello, here is shared volume.
+
+cd container2
+sh 0build.sh
+sh 1run.sh
+/ # cat myvol/greeting
+hello, here is shared volume.
+
+Dockerfile
+VOLUME /myvol
+"The host directory is, by its nature, host-dependent. For this reason, you can’t mount a host directory from Dockerfile, the VOLUME instruction does not support passing a host-dir, because built images should be portable. A host directory wouldn’t be available on all potential hosts.".
