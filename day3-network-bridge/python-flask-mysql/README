@@ -1,0 +1,7 @@
+1. sh 1_login_mysql.sh
+/: mysql -u root -pabcdefg
+
+
+app.py
+cnx = mysql.connector.connect(user='root', password='abcdefg', host='mysql-dev') 
+#mysql-dev been defined in docker-compose.yml
