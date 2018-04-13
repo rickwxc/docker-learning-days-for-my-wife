@@ -1,3 +1,10 @@
+Read full story here
+https://medium.com/@rickwang_wxc/using-docker-to-create-start-rails-development-7f8f9bb3f57d
+
+The extended reading for want to use one image for both purpose.
+https://medium.com/@rickwang_wxc/extend-reading-of-using-docker-to-create-start-rails-development-494524af1f2c
+
+
 User docker to start new rails project or load exist project into dev server. 
 
 
@@ -19,3 +26,6 @@ The run.sh will generated final conf file based on those two .template files.
 And some auto-generate files for docker to use(which I already put into .gitignore)
 *.cache
 docker-compose.yml
+
+
+
