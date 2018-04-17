@@ -1,0 +1,7 @@
+FROM node:9.8.0-alpine
+RUN npm install -g create-react-app
+
+RUN mkdir /react_app_dir
+WORKDIR /react_app_dir
+
+cmd node

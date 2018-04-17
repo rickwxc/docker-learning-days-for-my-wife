@@ -1,0 +1,22 @@
+version: '3'
+services:
+    day5-react:
+        container_name: day5-react
+        build:
+            context: .
+            dockerfile: Dockerfile.template
+        command: npm start
+        working_dir: /react_app_dir/react_app_dir
+        volumes:
+            - ./#app_dir_name#:/react_app_dir/react_app_dir
+        ports:
+            - '3000:3000'
+        networks:
+            - db
+
+networks:
+    db:
+        driver: bridge
+
+
+
