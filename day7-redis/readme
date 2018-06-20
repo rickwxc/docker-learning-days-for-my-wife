@@ -1,0 +1,5 @@
+before run do:
+
+docker pull redis
+
+make sure you have latest redis image.
