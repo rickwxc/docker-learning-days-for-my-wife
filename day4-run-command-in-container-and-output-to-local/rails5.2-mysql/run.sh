@@ -4,15 +4,6 @@ docker_compose_yml="docker-compose.yml"
 echo "#This is auto generated file, please do not edit. Edit docker-compose.template instead." > $docker_compose_yml
 
 
-mysql_data_dir="/Users/taoli/docker_files/docker-learning-days-for-my-wife/day4-run-command-in-container-and-output-to-local/rails5.2-mysql/dbdata"
-
-
-if [ -d $mysql_data_dir ]; then
-	echo "DB data folder: $mysql_data_dir"
-else
-	echo 'mysql data dir must be set.' 
-	exit
-fi
 
 usage_info="usage:"
 init_usage="sh run.sh init new_app_name"
@@ -42,6 +33,15 @@ if [ $1 == "init" ]; then
 fi
 
 if [ $1 == 'start' ]; then
+
+	mysql_data_dir="/Users/taoli/docker_files/docker-learning-days-for-my-wife/day4-run-command-in-container-and-output-to-local/rails5.2-mysql/dbdata"
+	if [ -d $mysql_data_dir ]; then
+		echo "DB data folder: $mysql_data_dir"
+	else
+		echo 'mysql data dir must be set.' 
+		exit
+	fi
+
 	if [ $2 ]; then
 		echo "--- now starting dev server for: $2 ---"
 		cat  docker-compose.template | sed  "s/#app_dir_name#/$2/g" | sed  "s%#app_db_folder#%$mysql_data_dir%g" |  cat >> $docker_compose_yml
