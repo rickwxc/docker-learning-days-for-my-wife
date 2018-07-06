@@ -1,0 +1,20 @@
+Rails5.2 + mysql
+
+User docker to start new rails project or load exist project into dev server. 
+
+
+1. create rails docker image.
+sh 0build-for-create.sh
+
+1.1 config the mysql data directory in run.sh.
+
+2. use run scripts to decide create new app or start dev sever.
+sh run.sh
+e.g.
+sh run.sh init my_app1
+sh run.sh start my_app1
+
+
+And some auto-generate files for docker to use(which I already put into .gitignore)
+docker-compose.yml
+
