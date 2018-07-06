@@ -1,0 +1,21 @@
+version: '3'
+services:
+    day4_rails500_sqlite:
+        container_name: day4_rails500_sqlite
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: tail -f /dev/null
+        working_dir: /rails_app_dir/my_rails_app
+        volumes:
+            - ./#app_dir_name#:/rails_app_dir/my_rails_app
+        ports:
+            - '3000:3000'
+        networks:
+            - db
+
+networks:
+    db:
+        driver: bridge
+
+
