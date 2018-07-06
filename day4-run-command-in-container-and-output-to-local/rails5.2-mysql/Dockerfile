@@ -4,6 +4,6 @@ RUN gem install rails -v 5.2.0
 
 RUN apt-get install -qq -y --fix-missing --no-install-recommends git 
 RUN apt-get install -qq -y --fix-missing --no-install-recommends default-libmysqlclient-dev
-#RUN apt-get install -qq -y --fix-missing --no-install-recommends sqlite3 libsqlite3-dev 
+RUN apt-get install -qq -y --fix-missing --no-install-recommends sqlite3 libsqlite3-dev 
 #RUN apt-get install -qq -y --fix-missing --no-install-recommends graphicsmagick
 
