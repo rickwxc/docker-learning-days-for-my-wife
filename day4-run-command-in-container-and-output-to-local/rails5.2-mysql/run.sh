@@ -46,8 +46,7 @@ if [ $1 == 'start' ]; then
 		echo "--- now starting dev server for: $2 ---"
 		cat  docker-compose.template | sed  "s/#app_dir_name#/$2/g" | sed  "s%#app_db_folder#%$mysql_data_dir%g" |  cat >> $docker_compose_yml
 
-		#docker-compose up --build
-		docker-compose up
+		docker-compose up --build
 		exit
 	fi
 
