@@ -2,6 +2,7 @@
 
 docker_yml_cache_file_name="Dockerfile_for_yml.cache"
 docker_compose_cache_file_name="docker-compose.yml"
+echo "" > $docker_compose_cache_file_name
 
 usage_info="usage:"
 init_usage="sh run.sh init new_app_name"
@@ -36,11 +37,12 @@ if [ $1 == 'start' ]; then
 		if [ -d "$2" ] && [ -r "$2/Gemfile" ]; then
 			echo "--- now starting dev server for: $2 ---"
 			cat dockerfile.template > $docker_yml_cache_file_name
-			echo "COPY $2/Gemfile Gemfile" >> $docker_yml_cache_file_name 
-			echo "RUN bundle install" >> $docker_yml_cache_file_name 
+			#echo "COPY $2/Gemfile Gemfile" >> $docker_yml_cache_file_name 
+			#echo "RUN bundle install" >> $docker_yml_cache_file_name 
 
 			sed  "s/#app_dir_name#/$2/g" docker-compose.template >> $docker_compose_cache_file_name
 			docker-compose up --build
+			#docker-compose up
 
 			exit
 		fi
