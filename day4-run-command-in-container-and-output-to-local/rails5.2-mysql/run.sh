@@ -1,5 +1,6 @@
 #!/bin/sh
 
+mysql_data_dir="/Users/taoli/docker_files/docker-learning-days-for-my-wife/day4-run-command-in-container-and-output-to-local/rails5.2-mysql/dbdata"
 docker_compose_yml="docker-compose.yml"
 echo "#This is auto generated file, please do not edit. Edit docker-compose.template instead." > $docker_compose_yml
 
@@ -34,7 +35,6 @@ fi
 
 if [ $1 == 'start' ]; then
 
-	mysql_data_dir="/Users/taoli/docker_files/docker-learning-days-for-my-wife/day4-run-command-in-container-and-output-to-local/rails5.2-mysql/dbdata"
 	if [ -d $mysql_data_dir ]; then
 		echo "DB data folder: $mysql_data_dir"
 	else
