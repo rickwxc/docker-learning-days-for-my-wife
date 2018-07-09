@@ -1,0 +1,33 @@
+version: '3'
+services:
+    day4_rails52_nodejs_mysql:
+        container_name: day4_rails52_nodejs_mysql
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: tail -f /dev/null
+        working_dir: /rails_app_dir/my_rails_app
+        volumes:
+            - ./#app_dir_name#:/rails_app_dir/my_rails_app
+        ports:
+            - '3000:3000'
+            - '3035:3035'#for webpack
+        networks:
+            - db
+    day4_rails52_nodejs_mysql_db:
+        image: mysql:5.5
+        container_name: day4_rails52_nodejs_mysql_db
+        environment:
+            MYSQL_ROOT_PASSWORD: abcdefg
+        volumes:
+            - #app_db_folder#:/var/lib/mysql
+        ports:
+            - '3306:3306'
+        networks:
+            - db
+
+networks:
+    db:
+        driver: bridge
+
+
